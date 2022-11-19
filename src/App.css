@@ -1,0 +1,48 @@
+.container-mobile {
+  margin: 32px auto;
+}
+
+@media (min-width: 915px) {
+  .div-header img {
+    margin-left: 16px;
+  }
+
+  .div-media-query {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    margin: 0 auto;
+  }
+
+  .container-mobile {
+    max-width: 1000px;
+  }
+
+  .form-balance {
+    width: 363px;
+    margin-top: 30px;
+  }
+
+  .list-transactions {
+    border: none;
+    padding: 0;
+    margin-right: 0;
+    margin-left: 0;
+  }
+  .transaction {
+    width: 500px;
+  }
+  .btn-filters {
+    width: 500px;
+  }
+
+  .btn-filters .btns button {
+    padding: 0 12px;
+    margin-left: 12px;
+  }
+
+  .no-card img {
+    max-width: 465px;
+    min-width: 100px;
+  }
+}

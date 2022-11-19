@@ -1,0 +1,54 @@
+.body {
+  background-color: var(--color-grey-4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.div-cover {
+  width: 1000px;
+  height: 100vh;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.intro {
+  width: 347px;
+}
+
+.intro h1 {
+  font-size: 38px;
+  margin: 30px 0;
+}
+
+.intro button {
+  width: 241px;
+  height: 48px;
+  border: 2px solid var(--brand-1);
+  background-color: var(--brand-1);
+  border-radius: 8px;
+  margin-top: 28px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.img-intro img {
+  max-width: 500px;
+}
+
+@media (max-width: 850px) {
+  .div-cover {
+    flex-direction: column;
+    margin-top: 32px;
+  }
+
+  .intro {
+    min-width: 200px;
+  }
+  .img-intro img {
+    width: 230px;
+  }
+}

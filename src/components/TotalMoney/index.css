@@ -1,0 +1,26 @@
+.div-result {
+  margin: 0 auto;
+  border: 2px solid var(--color-grey-2);
+  margin-top: 16px;
+  padding: 16px;
+}
+
+.div-result .value-result {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.value-result h3 {
+  font-size: 16px;
+}
+
+.div-result p {
+  font-size: var(--title-4);
+}
+
+.div-result .value-result p {
+  color: var(--brand-1);
+  font-size: 16px;
+  font-weight: 400;
+}
