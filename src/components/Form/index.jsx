@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { Input } from "../Input/Input";
+import { Select } from "../Select/Select";
 import "./index.css";
 
 export const Form = ({ newValue, children }) => {
@@ -21,38 +23,34 @@ export const Form = ({ newValue, children }) => {
 
   return (
     <form className="container-mobile form" onSubmit={handleSubmit}>
-      <label htmlFor="">Descrição</label>
-      <input
-        className="description"
+      <Input
+        required
         value={description}
-        onChange={(event) => {
-          setDescription(event.target.value);
-        }}
-        placeholder="Digite aqui sua descrição"
-        type="text"
+        name={"Descrição"}
+        className={"description"}
+        handleInput={(event) => setDescription(event.target.value)}
+        placeholder={"Digite aqui sua descrição"}
+        type={"text"}
       />
       <cite>Ex: Compra de roupas</cite>
       <div className="values">
         <div className="div-value">
-          <label htmlFor="">Valor</label>
-          <input
+          <Input
+            name={"Valor"}
+            required
             value={value}
-            type="number"
-            placeholder="1"
-            onChange={(event) => setValue(event.target.value)}
+            type={"number"}
+            placeholder={"R$"}
+            handleInput={(event) => setValue(event.target.value)}
           />
         </div>
         <div className="div-type-value">
-          <label htmlFor="">Tipo de valor</label>
-          <select
-            name=""
-            id=""
-            onChange={(event) => setType(event.target.value)}
-          >
-            <option value="">Selecione o tipo</option>
-            <option value="entrada">Entrada</option>
-            <option value="saida">Saída</option>
-          </select>
+          <Select
+            name={"Tipo de valor"}
+            handleSelect={(event) => setType(event.target.value)}
+            entrada={"entrada"}
+            saida={"saida"}
+          />
         </div>
       </div>
       {children}

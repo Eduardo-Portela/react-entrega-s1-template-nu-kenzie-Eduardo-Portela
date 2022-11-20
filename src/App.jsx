@@ -7,6 +7,8 @@ import { List } from "./components/List/List";
 import { TotalMoney } from "./components/TotalMoney";
 import "./App.css";
 import { HomePage } from "./components/HomePage/HomePage";
+import { Card } from "./components/Card";
+import { DashBoard } from "./components/DashBoard/DashBoard";
 
 function App() {
   const [listTransactions, setListTransactions] = useState([]);
@@ -38,7 +40,7 @@ function App() {
   return (
     <div className="app">
       {navPage ? (
-        <div>
+        <DashBoard>
           <Header>
             <Button name="Inicio" callback={() => setNavPage(false)} />
           </Header>
@@ -50,27 +52,32 @@ function App() {
               </Form>
               <TotalMoney listTransactions={filterTransactions} />
             </div>
-            <div className="list-transactions">
-              <List
+
+            <List>
+              <div className="btn-filters">
+                <h4>Resumo financeiro</h4>
+                <div className="btns">
+                  <Button
+                    name={"Todos"}
+                    callback={() => setFilterTransactions("todos")}
+                  />
+                  <Button
+                    name={"Entrada"}
+                    callback={() => setFilterTransactions("entrada")}
+                  />
+                  <Button
+                    name={"Saida"}
+                    callback={() => setFilterTransactions("saida")}
+                  />
+                </div>
+              </div>
+              <Card
                 listTransactions={filterTransactions}
                 removeTransaction={removeTransaction}
-              >
-                <Button
-                  name={"Todos"}
-                  callback={() => setFilterTransactions("todos")}
-                />
-                <Button
-                  name={"Entrada"}
-                  callback={() => setFilterTransactions("entrada")}
-                />
-                <Button
-                  name={"Saida"}
-                  callback={() => setFilterTransactions("saida")}
-                />
-              </List>
-            </div>
+              />
+            </List>
           </div>
-        </div>
+        </DashBoard>
       ) : (
         <HomePage>
           <Button name={"Iniciar"} callback={() => setNavPage(true)} />
